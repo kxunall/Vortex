@@ -6,7 +6,7 @@ const defaultTracks = [
         source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/1.mp3",
         url: "https://t.me/ll_KEX_ll",
     },
-   {
+     {
           name: "Bade Achhe Lagte",
           artist: "Amit Kumar",
           cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/2.jpg",
@@ -74,18 +74,22 @@ const defaultTracks = [
 
 let currentTrack = 0;
 let isPlaying = false;
-const audio = document.getElementById('audio');
+let isLooping = false;
+
+const audio = new Audio();
 const playPauseBtn = document.getElementById('play-pause-btn');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
+const loopBtn = document.getElementById('loop-btn');
 const progressBar = document.getElementById('progress-bar');
+const volumeBar = document.getElementById('volume-bar');
 const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
 
 function loadTrack(track) {
     document.getElementById('cover-image').src = track.cover;
     document.getElementById('track-name').textContent = track.name;
     document.getElementById('track-artist').textContent = track.artist;
-    document.getElementById('track-link').href = track.url;
     audio.src = track.source;
 }
 
@@ -112,6 +116,12 @@ function prevTrack() {
     if (isPlaying) audio.play();
 }
 
+function toggleLoop() {
+    isLooping = !isLooping;
+    audio.loop = isLooping;
+    loopBtn.classList.toggle('active');
+}
+
 function updateProgressBar() {
     const progress = (audio.currentTime / audio.duration) * 100;
     progressBar.value = progress;
@@ -122,15 +132,25 @@ function setProgress() {
     audio.currentTime = time;
 }
 
-function handleSearch() {
-    const term = searchInput.value.toLowerCase();
-    const filteredTracks = defaultTracks.filter(track => 
-        track.name.toLowerCase().includes(term) ||
-        track.artist.toLowerCase().includes(term)
-    );
-    if (filteredTracks.length > 0) {
-        currentTrack = 0;
-        loadTrack(filteredTracks[0]);
+function setVolume() {
+    audio.volume = volumeBar.value / 100;
+}
+
+async function handleSearch() {
+    const term = searchInput.value;
+    if (term.trim() === "") return;
+
+    try {
+        const tracks = await searchSpotifyTracks(term);
+        if (tracks.length > 0) {
+            defaultTracks.length = 0; // Clear the array
+            defaultTracks.push(...tracks);
+            currentTrack = 0;
+            loadTrack(defaultTracks[currentTrack]);
+            if (isPlaying) audio.play();
+        }
+    } catch (error) {
+        console.error('Spotify search error:', error);
     }
 }
 
@@ -138,10 +158,20 @@ function handleSearch() {
 playPauseBtn.addEventListener('click', togglePlayPause);
 nextBtn.addEventListener('click', nextTrack);
 prevBtn.addEventListener('click', prevTrack);
+loopBtn.addEventListener('click', toggleLoop);
 audio.addEventListener('timeupdate', updateProgressBar);
-progressBar.addEventListener('change', setProgress);
-audio.addEventListener('ended', nextTrack);
-searchInput.addEventListener('input', handleSearch);
+audio.addEventListener('ended', () => {
+    if (!isLooping) nextTrack();
+});
+progressBar.addEventListener('input', setProgress);
+volumeBar.addEventListener('input', setVolume);
+searchButton.addEventListener('click', handleSearch);
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSearch();
+    }
+});
 
 // Initial load
 loadTrack(defaultTracks[currentTrack]);
