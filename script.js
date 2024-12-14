@@ -6,70 +6,62 @@ const defaultTracks = [
         source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/1.mp3",
         url: "https://t.me/ll_KEX_ll",
     },
-     {
-          name: "Bade Achhe Lagte",
-          artist: "Amit Kumar",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/2.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/2.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: true
-        },
-        {
-          name: "Ek Pyar Ka Naghma",
-          artist: "Sachin Gupta",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/3.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/3.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: false
-        },
-        {
-          name: "Ek Ladki Bheegi Bhagi Si",
-          artist: "Kishore Kumar",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/4.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/4.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: false
-        },
-        {
-          name: "Gali Me Aaj Chand Nikla",
-          artist: "Alka Yagnik",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/5.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/5.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: true
-        },
-        {
-          name: "Mere Mehboob Qayamat Hogi",
-          artist: "Sachin Gupta",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/6.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/6.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: false
-        },
-        {
-          name: "O Mere Dil Ke Chain",
-          artist: "Kishore Kumar",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/7.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/7.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: true
-        },
-        {
-          name: "Yeh Raaten Yeh Mausam",
-          artist: "Sachin Gupta",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/8.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/8.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: false
-        },
-        {
-          name: "Yeh Sham Mastani",
-          artist: "Kishore Kumar",
-          cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/9.jpg",
-          source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/9.mp3",
-          url: "https://t.me/ll_KEX_ll",
-          favorited: false
-        }
+    {
+        name: "Bade Achhe Lagte",
+        artist: "Amit Kumar",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/2.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/2.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "Ek Pyar Ka Naghma",
+        artist: "Sachin Gupta",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/3.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/3.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "Ek Ladki Bheegi Bhagi Si",
+        artist: "Kishore Kumar",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/4.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/4.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "Gali Me Aaj Chand Nikla",
+        artist: "Alka Yagnik",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/5.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/5.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "Mere Mehboob Qayamat Hogi",
+        artist: "Sachin Gupta",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/6.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/6.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "O Mere Dil Ke Chain",
+        artist: "Kishore Kumar",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/7.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/7.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "Yeh Raaten Yeh Mausam",
+        artist: "Sachin Gupta",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/8.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/8.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    },
+    {
+        name: "Yeh Sham Mastani",
+        artist: "Kishore Kumar",
+        cover: "https://raw.githubusercontent.com/KEX001/Mini-player/master/img/9.jpg",
+        source: "https://raw.githubusercontent.com/KEX001/Mini-player/master/mp3/9.mp3",
+        url: "https://t.me/ll_KEX_ll",
+    }
 ];
 
 let currentTrack = 0;
@@ -123,8 +115,10 @@ function toggleLoop() {
 }
 
 function updateProgressBar() {
-    const progress = (audio.currentTime / audio.duration) * 100;
-    progressBar.value = progress;
+    if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.value = progress;
+    }
 }
 
 function setProgress() {
@@ -147,7 +141,9 @@ async function handleSearch() {
             defaultTracks.push(...tracks);
             currentTrack = 0;
             loadTrack(defaultTracks[currentTrack]);
-            if (isPlaying) audio.play();
+            audio.play();
+            isPlaying = true;
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
         }
     } catch (error) {
         console.error('Spotify search error:', error);
@@ -175,3 +171,4 @@ searchInput.addEventListener('keypress', (e) => {
 
 // Initial load
 loadTrack(defaultTracks[currentTrack]);
+
